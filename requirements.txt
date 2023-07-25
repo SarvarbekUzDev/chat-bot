@@ -1,5 +1,5 @@
 aiogram==2.25.1
 aiogram-media-group==0.5.1
 SQLAlchemy==2.0.18
-python-dotenv
+python-dotenv==1.0.0
 bardapi
