@@ -6,7 +6,7 @@ from functions import ai_response
 
 
 # Echo bot
-@dp.message_handler(is_member=True, state=None)
+@dp.message_handler(is_member=True)
 async def bot_echo(message: types.Message):
 	wait_message = await message.answer("⏳Iltimos biroz kuting...")
 	try:
