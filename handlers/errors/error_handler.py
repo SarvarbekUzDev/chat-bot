@@ -3,7 +3,7 @@ from aiogram.utils.exceptions import (Unauthorized, InvalidQueryID, TelegramAPIE
                                       CantDemoteChatCreator, MessageNotModified, MessageToDeleteNotFound,
                                       MessageTextIsEmpty, RetryAfter,
                                       CantParseEntities, MessageCantBeDeleted,
-                                      BotBlocked, TerminatedByOtherGetUpdates, BadRequest)
+                                      BotBlocked, TerminatedByOtherGetUpdates, BadRequest, Unauthorized)
 
 
 from loader import dp
@@ -66,6 +66,10 @@ async def errors_handler(update, exception):
         return True
     if isinstance(exception, TerminatedByOtherGetUpdates):
         logging.exception(f'TerminatedByOtherGetUpdates: {exception} \nUpdate: {update}')
+        return True
+
+    if isinstance(exception, Unauthorized):
+        logging.exception(f'Unauthorized: {exception} \nUpdate: {update}')
         return True
     
     
