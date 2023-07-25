@@ -7,7 +7,7 @@ from .db_class import Base, Users
 
 class DataBase():
 	engine = create_engine("sqlite:///database.db",echo=True)
-	Base.metadata.create_all(bind=engine)
+	# Base.metadata.create_all(bind=engine)
 
 	Session = sessionmaker(bind=engine)
 	session = Session()
