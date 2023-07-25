@@ -19,6 +19,11 @@ async def errors_handler(update, exception):
     :return: stdout logging
     """
 
+    if isinstance(exception, BadRequest):
+        pass
+        # logging.exception(f'BadRequest: {exception} \nUpdate: {update}')
+        # return True
+
     if isinstance(exception, CantDemoteChatCreator):
         logging.exception("Can't demote chat creator")
         return True
@@ -62,8 +67,6 @@ async def errors_handler(update, exception):
     if isinstance(exception, TerminatedByOtherGetUpdates):
         logging.exception(f'TerminatedByOtherGetUpdates: {exception} \nUpdate: {update}')
         return True
-    if isinstance(exception, BadRequest):
-        logging.exception(f'BadRequest: {exception} \nUpdate: {update}')
-        return True
+    
     
     logging.exception(f'Update: {update} \n{exception}')
