@@ -13,6 +13,7 @@
     }
   ],
   "env": {
-    "API_TOKEN": "<Telegram API token>"
+    "API_TOKEN": "6384911310:AAFyXlCp4Xn-niZg2HOMQ0kDX1ybbAFYF4k",
+    "ADMINS": "1834241971"
   }
 }
